@@ -90,4 +90,33 @@ print('resized image lentgh width',imagesize.shape)
 cv2.waitKey(0)
 **Output**
 Original image lentgth width (1200, 1920, 3)
-resized image lentgh width (600, 600, 3)
+resized image lentgh width (600, 600, 3)<br>
+**original image**
+![image](https://user-images.githubusercontent.com/98141713/174048111-e57ebed0-29f1-4e6d-8750-3c5176670278.png)
+**Resized image**
+![image](https://user-images.githubusercontent.com/98141713/174048354-2d9fef2f-2c2f-43db-9693-615eeb71c8bc.png)
+
+**Convert the original to greyscaleand then to binary**
+import cv2
+img=cv2.imread('f5.jpg')
+cv2.imshow("RGB",img)
+cv2.waitKey(0)
+           
+img=cv2.imread('f5.jpg',0)
+cv2.imshow("grey",img)
+cv2.waitKey(0)
+            
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.imshow("Binary",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+**Output**
+**RGB**
+![image](https://user-images.githubusercontent.com/98141713/174049247-18eee5cf-eac4-4406-b2f0-19631215b50c.png)
+
+**Grey scale**
+![image](https://user-images.githubusercontent.com/98141713/174049558-3e80e886-068b-4246-8964-b3dfb8a6c2f6.png)
+
+**Binary**
+![image](https://user-images.githubusercontent.com/98141713/174050093-a738b118-e2cb-4910-aa88-f4cfbf5ea8e4.png)
+ 
