@@ -218,7 +218,7 @@ cv2.imwrite('output.jpg', fimg4)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175264594-fd30a9fe-cb63-45f1-85d2-59969b1c36ac.png)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175264700-5aab091c-1d95-4060-8bb3-753e189ad241.png)<br>
 
-**Develop a program to change the image to different color spaces**<br>
+**13.Develop a program to change the image to different color spaces**<br>
 import cv2<br>
 img= cv2.imread("puppy2.jpg") <br>
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
@@ -240,7 +240,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/98141713/175271701-81808ef8-016e-4c00-bba5-da5e893751d9.png)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175271826-9852dceb-b0aa-4dee-b34e-8f1c0ea231d9.png)<br>
 
-**Develop a program to create an image by using 2D array**<br>
+**14.Develop a program to create an image by using 2D array**<br>
 import cv2 as c<br>
 import numpy as np<br>
 from PIL import Image<br>
