@@ -218,4 +218,41 @@ cv2.imwrite('output.jpg', fimg4)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175264594-fd30a9fe-cb63-45f1-85d2-59969b1c36ac.png)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175264700-5aab091c-1d95-4060-8bb3-753e189ad241.png)<br>
 
+**Develop a program to change the image to different color spaces**<br>
+import cv2<br>
+img= cv2.imread("puppy2.jpg") <br>
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)<br>
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)<br>
+hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)<br>
+yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)<br>
+cv2.imshow("GRAY image",gray)<br>
+cv2.imshow("HSV image",hsv)<br>
+cv2.imshow("LAB image",lab)<br>
+cv2.imshow("HLS image",hls)<br>
+cv2.imshow("YUV image",yuv)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/175271242-d59ce738-247d-4b2b-ae18-3fa0f12703a1.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/175271394-7123c791-84aa-4388-8a7e-d8f2280ab4f7.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/175271513-3988a86e-90b3-4b57-8193-ca752be7ef55.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/175271701-81808ef8-016e-4c00-bba5-da5e893751d9.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/175271826-9852dceb-b0aa-4dee-b34e-8f1c0ea231d9.png)<br>
+
+**Develop a program to create an image by using 2D array**<br>
+import cv2 as c<br>
+import numpy as np<br>
+from PIL import Image<br>
+array = np.zeros([100, 200, 3], dtype=np.uint8)<br>
+array[:,:100]=[255, 130, 0]<br>
+array[:,100:]=[0, 0, 255]<br>
+img = Image.fromarray(array)<br>
+img.save('image1.png')<br>
+img.show()<br>
+c.waitKey(0)<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/175274619-3d98d06d-51e9-4f98-8756-1c7f6b9b9d01.png)<br>
+
+
 
