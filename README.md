@@ -289,6 +289,32 @@ cv2.waitKey(0)
 ![image](https://user-images.githubusercontent.com/98141713/176404696-d0d269f9-d45a-438b-910a-79734a616125.png)
 
 **Types of blurring on image**
+import cv2
+import numpy as np
+image = cv2.imread('doggo.jpg')
+cv2.imshow('Original Image', image)
+cv2.waitKey(0)
+
+Gaussian = cv2.GaussianBlur (image, (7, 7), 0) 
+cv2.imshow('Gaussian Blurring', Gaussian)
+cv2.waitKey(0)
+
+median = cv2.medianBlur(image, 5)
+cv2.imshow('Median Blurring', median)
+cv2.waitKey(0)
+
+bilateral = cv2.bilateralFilter(image, 9, 75, 75)
+cv2.imshow('Bilateral Blurring', bilateral)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/176408336-f465d095-834c-48dd-bb13-faafc64adc53.png)
+![image](https://user-images.githubusercontent.com/98141713/176408480-09cb12a2-3325-4f74-bc8c-3522289a76d2.png)
+![image](https://user-images.githubusercontent.com/98141713/176408585-cff1cd4f-9dd2-4ecd-bb5e-76c0db394f07.png)
+![image](https://user-images.githubusercontent.com/98141713/176409028-2e68ed76-13bb-48f4-9628-e6e9d42ba87e.png)
+
+
 
 
 
