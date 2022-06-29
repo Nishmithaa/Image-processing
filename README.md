@@ -254,5 +254,42 @@ c.waitKey(0)<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/175274619-3d98d06d-51e9-4f98-8756-1c7f6b9b9d01.png)<br>
 
+**15.Bitwise operartions on images**<br>
+import cv2 
+import matplotlib.pyplot as plt
+image1=cv2.imread('d2.jpg')
+image2=cv2.imread('d2.jpg')
+
+ax=plt.subplots(figsize=(15,10))
+
+bitwiseAnd=cv2.bitwise_and(image1,image2)
+bitwiseOr=cv2.bitwise_or(image1,image2)
+bitwiseXor=cv2.bitwise_xor(image1,image2)
+bitwiseNot_img1=cv2.bitwise_not(image1)
+bitwiseNot_img2=cv2.bitwise_not(image2)
+
+plt.subplot(151)
+plt.imshow(bitwiseAnd)
+
+plt.subplot(152)
+plt.imshow(bitwiseOr)
+
+plt.subplot(153)
+plt.imshow(bitwiseXor)
+
+plt.subplot(154)
+plt.imshow(bitwiseNot_img1)
+
+plt.subplot(155)
+plt.imshow(bitwiseNot_img2)
+
+cv2.waitKey(0)
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/176404696-d0d269f9-d45a-438b-910a-79734a616125.png)
+
+**Types of blurring on image**
+
+
 
 
