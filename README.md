@@ -255,98 +255,128 @@ c.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/98141713/175274619-3d98d06d-51e9-4f98-8756-1c7f6b9b9d01.png)<br>
 
 **15.Bitwise operartions on images**<br>
-import cv2 
-import matplotlib.pyplot as plt
-image1=cv2.imread('d2.jpg')
-image2=cv2.imread('d2.jpg')
+import cv2 <br>
+import matplotlib.pyplot as plt<br>
+image1=cv2.imread('d2.jpg')<br>
+image2=cv2.imread('d2.jpg')<br>
 
-ax=plt.subplots(figsize=(15,10))
+ax=plt.subplots(figsize=(15,10))<br>
 
-bitwiseAnd=cv2.bitwise_and(image1,image2)
-bitwiseOr=cv2.bitwise_or(image1,image2)
-bitwiseXor=cv2.bitwise_xor(image1,image2)
-bitwiseNot_img1=cv2.bitwise_not(image1)
-bitwiseNot_img2=cv2.bitwise_not(image2)
+bitwiseAnd=cv2.bitwise_and(image1,image2)<br>
+bitwiseOr=cv2.bitwise_or(image1,image2)<br>
+bitwiseXor=cv2.bitwise_xor(image1,image2)<br>
+bitwiseNot_img1=cv2.bitwise_not(image1)<br>
+bitwiseNot_img2=cv2.bitwise_not(image2)<br>
 
-plt.subplot(151)
-plt.imshow(bitwiseAnd)
+plt.subplot(151)<br>
+plt.imshow(bitwiseAnd)<br>
 
-plt.subplot(152)
-plt.imshow(bitwiseOr)
+plt.subplot(152)<br>
+plt.imshow(bitwiseOr)<br>
 
-plt.subplot(153)
-plt.imshow(bitwiseXor)
+plt.subplot(153)<br>
+plt.imshow(bitwiseXor)<br>
 
-plt.subplot(154)
-plt.imshow(bitwiseNot_img1)
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
 
-plt.subplot(155)
-plt.imshow(bitwiseNot_img2)
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
 
-cv2.waitKey(0)
+cv2.waitKey(0)<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/176404696-d0d269f9-d45a-438b-910a-79734a616125.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/176404696-d0d269f9-d45a-438b-910a-79734a616125.png)<br>
 
-**Types of blurring on image**
-import cv2
-import numpy as np
-image = cv2.imread('doggo.jpg')
-cv2.imshow('Original Image', image)
-cv2.waitKey(0)
+**Types of blurring on image**<br>
+import cv2<br>
+import numpy as np<br>
+image = cv2.imread('doggo.jpg')<br>
+cv2.imshow('Original Image', image)<br>
+cv2.waitKey(0)<br>
 
-Gaussian = cv2.GaussianBlur (image, (7, 7), 0) 
-cv2.imshow('Gaussian Blurring', Gaussian)
-cv2.waitKey(0)
+Gaussian = cv2.GaussianBlur (image, (7, 7), 0) <br>
+cv2.imshow('Gaussian Blurring', Gaussian)<br>
+cv2.waitKey(0)<br>
 
-median = cv2.medianBlur(image, 5)
-cv2.imshow('Median Blurring', median)
-cv2.waitKey(0)
+median = cv2.medianBlur(image, 5)<br>
+cv2.imshow('Median Blurring', median)<br>
+cv2.waitKey(0)<br>
 
-bilateral = cv2.bilateralFilter(image, 9, 75, 75)
-cv2.imshow('Bilateral Blurring', bilateral)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+bilateral = cv2.bilateralFilter(image, 9, 75, 75)<br>
+cv2.imshow('Bilateral Blurring', bilateral)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/176408336-f465d095-834c-48dd-bb13-faafc64adc53.png)
-![image](https://user-images.githubusercontent.com/98141713/176408480-09cb12a2-3325-4f74-bc8c-3522289a76d2.png)
-![image](https://user-images.githubusercontent.com/98141713/176408585-cff1cd4f-9dd2-4ecd-bb5e-76c0db394f07.png)
-![image](https://user-images.githubusercontent.com/98141713/176409028-2e68ed76-13bb-48f4-9628-e6e9d42ba87e.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/176408336-f465d095-834c-48dd-bb13-faafc64adc53.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176408480-09cb12a2-3325-4f74-bc8c-3522289a76d2.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176408585-cff1cd4f-9dd2-4ecd-bb5e-76c0db394f07.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176409028-2e68ed76-13bb-48f4-9628-e6e9d42ba87e.png)<br>
 
-**Image enhancement**
-from PIL import Image
-from PIL import ImageEnhance
+**Image enhancement**<br>
+from PIL import Image<br>
+from PIL import ImageEnhance<br>
 
-image=Image.open('doggo.jpg')
-image.show()
+image=Image.open('doggo.jpg')<br>
+image.show()<br>
 
-enh_bri=ImageEnhance.Brightness(image)
-brightness=1.5
-image_brightened=enh_bri. enhance (brightness) 
-image_brightened.show()
+enh_bri=ImageEnhance.Brightness(image)<br>
+brightness=1.5<br>
+image_brightened=enh_bri. enhance (brightness) <br>
+image_brightened.show()<br>
 
-enh_col=ImageEnhance.Color(image)
-color= 1.5
-image_colored = enh_col.enhance(color)
-image_colored.show()
+enh_col=ImageEnhance.Color(image)<br>
+color= 1.5<br>
+image_colored = enh_col.enhance(color)<br>
+image_colored.show()<br>
 
-enh_con=ImageEnhance.Contrast(image)
-contrast = 1.5
-image_contrasted=enh_con. enhance (contrast)
-image_contrasted.show()
+enh_con=ImageEnhance.Contrast(image)<br>
+contrast = 1.5<br>
+image_contrasted=enh_con. enhance (contrast)<br>
+image_contrasted.show()<br>
 
-enh_sha=ImageEnhance.Sharpness(image)
-sharpness=3.0
-image_sharped = enh_sha. enhance (sharpness)
-image_sharped.show()
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/176417178-72c0f268-08a2-43d8-8681-9c3dc597410a.png)
-![image](https://user-images.githubusercontent.com/98141713/176417312-47eda2a7-ed2d-47f8-9aac-0d219f695237.png)
-![image](https://user-images.githubusercontent.com/98141713/176417401-b0089b7d-7eff-42f7-9f3a-1cc275f18735.png)
-![image](https://user-images.githubusercontent.com/98141713/176417489-51094a92-5b32-4629-a175-6637a7bd0339.png)
-![image](https://user-images.githubusercontent.com/98141713/176417746-d671c3b7-1669-447b-9125-517aa7720907.png)
+enh_sha=ImageEnhance.Sharpness(image)<br>
+sharpness=3.0<br>
+image_sharped = enh_sha. enhance (sharpness)<br>
+image_sharped.show()<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/176417178-72c0f268-08a2-43d8-8681-9c3dc597410a.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176417312-47eda2a7-ed2d-47f8-9aac-0d219f695237.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176417401-b0089b7d-7eff-42f7-9f3a-1cc275f18735.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176417489-51094a92-5b32-4629-a175-6637a7bd0339.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/176417746-d671c3b7-1669-447b-9125-517aa7720907.png)<br>
 
+**Image morphology**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+from PIL import Image, ImageEnhance<br>
+
+img = cv2.imread('d2.jpg',0) <br>
+ax=plt.subplots (figsize=(20,10))<br>
+kernel = np.ones((5,5), np. uint8)<br>
+
+opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)<br>
+closing = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)<br>
+erosion = cv2. erode (img, kernel, iterations = 1)<br>
+dilation = cv2.dilate (img, kernel, iterations = 1)<br>
+gradient = cv2.morphologyEx(img, cv2.MORPH_GRADIENT, kernel)<br>
+
+plt.subplot(151)<br>
+plt.imshow(opening)<br>
+plt.subplot(152) <br>
+plt.imshow(closing)<br>
+plt.subplot(153)<br>
+plt.imshow(erosion)<br>
+plt.subplot(154)<br>
+plt.imshow(dilation)<br>
+plt.subplot(155)<br>
+plt.imshow(gradient)<br>
+cv2.waitKey(0)<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/176419716-4cdb1b3a-e575-441e-83f6-c9ea9ed204b5.png)<br>
 
 
 
