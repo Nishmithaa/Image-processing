@@ -314,6 +314,41 @@ cv2.destroyAllWindows()
 ![image](https://user-images.githubusercontent.com/98141713/176408585-cff1cd4f-9dd2-4ecd-bb5e-76c0db394f07.png)
 ![image](https://user-images.githubusercontent.com/98141713/176409028-2e68ed76-13bb-48f4-9628-e6e9d42ba87e.png)
 
+**Image enhancement**
+from PIL import Image
+from PIL import ImageEnhance
+
+image=Image.open('doggo.jpg')
+image.show()
+
+enh_bri=ImageEnhance.Brightness(image)
+brightness=1.5
+image_brightened=enh_bri. enhance (brightness) 
+image_brightened.show()
+
+enh_col=ImageEnhance.Color(image)
+color= 1.5
+image_colored = enh_col.enhance(color)
+image_colored.show()
+
+enh_con=ImageEnhance.Contrast(image)
+contrast = 1.5
+image_contrasted=enh_con. enhance (contrast)
+image_contrasted.show()
+
+enh_sha=ImageEnhance.Sharpness(image)
+sharpness=3.0
+image_sharped = enh_sha. enhance (sharpness)
+image_sharped.show()
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/176417178-72c0f268-08a2-43d8-8681-9c3dc597410a.png)
+![image](https://user-images.githubusercontent.com/98141713/176417312-47eda2a7-ed2d-47f8-9aac-0d219f695237.png)
+![image](https://user-images.githubusercontent.com/98141713/176417401-b0089b7d-7eff-42f7-9f3a-1cc275f18735.png)
+![image](https://user-images.githubusercontent.com/98141713/176417489-51094a92-5b32-4629-a175-6637a7bd0339.png)
+![image](https://user-images.githubusercontent.com/98141713/176417746-d671c3b7-1669-447b-9125-517aa7720907.png)
+
+
+
 
 
 
