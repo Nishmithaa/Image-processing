@@ -288,7 +288,7 @@ cv2.waitKey(0)<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/176404696-d0d269f9-d45a-438b-910a-79734a616125.png)<br>
 
-**Types of blurring on image**<br>
+**16.Types of blurring on image**<br>
 import cv2<br>
 import numpy as np<br>
 image = cv2.imread('doggo.jpg')<br>
@@ -314,7 +314,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/98141713/176408585-cff1cd4f-9dd2-4ecd-bb5e-76c0db394f07.png)<br>
 ![image](https://user-images.githubusercontent.com/98141713/176409028-2e68ed76-13bb-48f4-9628-e6e9d42ba87e.png)<br>
 
-**Image enhancement**<br>
+**17.Image enhancement**<br>
 from PIL import Image<br>
 from PIL import ImageEnhance<br>
 
@@ -347,7 +347,7 @@ image_sharped.show()<br>
 ![image](https://user-images.githubusercontent.com/98141713/176417489-51094a92-5b32-4629-a175-6637a7bd0339.png)<br>
 ![image](https://user-images.githubusercontent.com/98141713/176417746-d671c3b7-1669-447b-9125-517aa7720907.png)<br>
 
-**Image morphology**<br>
+**18.Image morphology**<br>
 import cv2<br>
 import numpy as np<br>
 from matplotlib import pyplot as plt<br>
@@ -379,7 +379,7 @@ cv2.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/98141713/176419716-4cdb1b3a-e575-441e-83f6-c9ea9ed204b5.png)<br>
 
 
-**Develop a program to read the image<br>
+**19.Develop a program to read the image<br>
 Write or save the grayscale image<br>
 Display the original image and grayscale image**<br>
 
@@ -400,7 +400,7 @@ if isSaved:print('The image is successfully saved.')<br>
 ![image](https://user-images.githubusercontent.com/98141713/178700764-c531fb8f-03b5-4094-bd39-08f793393911.png)<br>
 
 
-**Gray level slicing with background**<br>
+**20.Gray level slicing with background**<br>
 import cv2<br>
 import numpy as np<br>
 from matplotlib import pyplot as plt<br>
@@ -420,7 +420,7 @@ plt.show()<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/178707961-d085ab27-503e-4c20-b593-d166ff59a40a.png)<br>
 
-**Graylevel slicing without background**<br>
+**21.Graylevel slicing without background**<br>
 import cv2<br>
 import numpy as np<br>
 from matplotlib import pyplot as plt <br>
