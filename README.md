@@ -379,49 +379,67 @@ cv2.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/98141713/176419716-4cdb1b3a-e575-441e-83f6-c9ea9ed204b5.png)<br>
 
 
-**Develop a program to read the image
-Write or save the grayscale image
-Display the original image and grayscale image**
+**Develop a program to read the image<br>
+Write or save the grayscale image<br>
+Display the original image and grayscale image**<br>
 
-import cv2
-OriginalImg=cv2.imread('OT77.jpg')
-GrayImg=cv2.imread('OT77.jpg',0)
-isSaved=cv2.imwrite('D:\OT77.jpg', GrayImg) 
-cv2.imshow('Display Original Image',OriginalImg)
-cv2.imshow('Display Grayscale Image', GrayImg)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-if isSaved:print('The image is successfully saved.')
+import cv2<br>
+OriginalImg=cv2.imread('OT77.jpg')<br>
+GrayImg=cv2.imread('OT77.jpg',0)<br>
+isSaved=cv2.imwrite('D:\OT77.jpg', GrayImg) <br>
+cv2.imshow('Display Original Image',OriginalImg)<br>
+cv2.imshow('Display Grayscale Image', GrayImg)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+if isSaved:print('The image is successfully saved.')<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/178700270-1b2dd783-9778-408c-a79e-b9dab35dbb0c.png)
-![image](https://user-images.githubusercontent.com/98141713/178700417-d135f555-2056-4f31-ad8c-b1bc39e8ad27.png)
-**Picture in drive**
-![image](https://user-images.githubusercontent.com/98141713/178700764-c531fb8f-03b5-4094-bd39-08f793393911.png)
-
-
-**Gray level slicing with background**
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-image=cv2.imread('Droplet.jpg',0) 
-x,y=image.shape
-z=np.zeros((x,y))
-for i in range(0,x):
-    for j in range(0,y):
-        if(image[i][j]>50 and image[i][j]<150):
-         z[i][j]=255
-else:z[i][j]=image[i][j]
-equ=np.hstack((image,z))
-plt.title('Graylevel slicing with background')
-plt.imshow(equ,'gray')
-plt.show()
-
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/178706519-ac962738-8834-4080-98cc-f69741c4bcab.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/178700270-1b2dd783-9778-408c-a79e-b9dab35dbb0c.png)<br>
+![image](https://user-images.githubusercontent.com/98141713/178700417-d135f555-2056-4f31-ad8c-b1bc39e8ad27.png)<br>
+**Picture in drive**<br>
+![image](https://user-images.githubusercontent.com/98141713/178700764-c531fb8f-03b5-4094-bd39-08f793393911.png)<br>
 
 
+**Gray level slicing with background**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('Droplet.jpg',0) <br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+         z[i][j]=255<br>
+else:z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
 
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/178707961-d085ab27-503e-4c20-b593-d166ff59a40a.png)<br>
+
+**Graylevel slicing without background**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt <br>
+image=cv2.imread('Droplet.jpg', 0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+                z[i][j]=255<br>
+            else:<br>
+                z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing w/o background')<br>
+plt.imshow(equ, 'gray')<br>
+plt.show()<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/178708052-52cb2bdc-6345-40d8-bf9d-4ccecc799dfd.png)<br>
 
 
 
