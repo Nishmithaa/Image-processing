@@ -400,7 +400,25 @@ if isSaved:print('The image is successfully saved.')
 ![image](https://user-images.githubusercontent.com/98141713/178700764-c531fb8f-03b5-4094-bd39-08f793393911.png)
 
 
+**Gray level slicing with background**
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+image=cv2.imread('Droplet.jpg',0) 
+x,y=image.shape
+z=np.zeros((x,y))
+for i in range(0,x):
+    for j in range(0,y):
+        if(image[i][j]>50 and image[i][j]<150):
+         z[i][j]=255
+else:z[i][j]=image[i][j]
+equ=np.hstack((image,z))
+plt.title('Graylevel slicing with background')
+plt.imshow(equ,'gray')
+plt.show()
 
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/178706519-ac962738-8834-4080-98cc-f69741c4bcab.png)
 
 
 
