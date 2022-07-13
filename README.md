@@ -379,6 +379,27 @@ cv2.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/98141713/176419716-4cdb1b3a-e575-441e-83f6-c9ea9ed204b5.png)<br>
 
 
+**Develop a program to read the image
+Write or save the grayscale image
+Display the original image and grayscale image**
+
+import cv2
+OriginalImg=cv2.imread('OT77.jpg')
+GrayImg=cv2.imread('OT77.jpg',0)
+isSaved=cv2.imwrite('D:\OT77.jpg', GrayImg) 
+cv2.imshow('Display Original Image',OriginalImg)
+cv2.imshow('Display Grayscale Image', GrayImg)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+if isSaved:print('The image is successfully saved.')
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/178700270-1b2dd783-9778-408c-a79e-b9dab35dbb0c.png)
+![image](https://user-images.githubusercontent.com/98141713/178700417-d135f555-2056-4f31-ad8c-b1bc39e8ad27.png)
+
+
+
+
 
 
 
