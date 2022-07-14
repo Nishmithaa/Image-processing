@@ -442,5 +442,45 @@ plt.show()<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/178708052-52cb2bdc-6345-40d8-bf9d-4ccecc799dfd.png)<br>
 
+**22.Ananlyze image data using histogram.**<br>
+from skimage import io<br>
+import matplotlib.pyplot as plt<br>
+image = io.imread('S1.jpg')<br>
+
+_ = plt.hist(image.ravel(), bins = 256, color = 'orange', )<br>
+_ = plt.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5)<br>
+_ = plt.hist(image[:, :, 1].ravel(), bins = 256, color = 'Green', alpha = 0.5)<br>
+_ = plt.hist(image[:, :, 2].ravel(), bins = 256, color = 'Blue', alpha = 0.5)<br>
+_ = plt.xlabel('Intensity Value')<br>
+_ = plt.ylabel('Count')<br>
+_ = plt.legend(['Total', 'Red_Channel', 'Green_Channel', 'Blue_Channel'])<br>
+plt.show()<br>
+
+*Output*<br>
+![image](https://user-images.githubusercontent.com/98141713/178956270-f7c7b498-546a-4a5b-980b-b7c216ab7225.png)<br>
+
+2.<br><br>
+import cv2<br>  
+from matplotlib import pyplot as plt  <br>
+img = cv2.imread('S1.jpg',0) <br>
+histr = cv2.calcHist([img],[0],None,[256],[0,256]) <br>
+plt.plot(histr) <br>
+plt.show()<br>
+*Output*<br>
+![image](https://user-images.githubusercontent.com/98141713/178956958-bd65c47c-9c1b-485c-afe0-bd4c27aaf889.png)<br>
+
+3.
+import numpy as np<br>
+import cv2 as cv
+from matplotlib import pyplot as plt<br>
+img = cv.imread('sunrise.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img = cv.imread('sunrise.jpg',0)<br>
+plt.hist(img.ravel(),256,[0,256]);<br>
+plt.show()<br>
+
+*Output*<br>
+![image](https://user-images.githubusercontent.com/98141713/178957424-12b6f35a-4b44-4a2d-a865-704af1bb4452.png)<br>
 
 
