@@ -484,6 +484,7 @@ plt.show()<br>
 ![image](https://user-images.githubusercontent.com/98141713/178957424-12b6f35a-4b44-4a2d-a865-704af1bb4452.png)<br>
 
 **23. Program to perform basic image data analysisi using intensity transformation
+
 a)Image negetive
 b)log transformation
 c)Gamma correction**
