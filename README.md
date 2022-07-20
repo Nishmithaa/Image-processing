@@ -483,5 +483,120 @@ plt.show()<br>
 *Output*<br>
 ![image](https://user-images.githubusercontent.com/98141713/178957424-12b6f35a-4b44-4a2d-a865-704af1bb4452.png)<br>
 
-# You didnt signout
-its Hacked
+**23. Program to perform basic image data analysisi using intensity transformation
+a)Image negetive
+b)log transformation
+c)Gamma correction**
+
+%matplotlib inline
+import imageio
+import matplotlib.pyplot as plt
+import warnings
+import matplotlib.cbook
+warnings.filterwarnings("ignore", category=matplotlib.cbook.mplDeprecation)
+pic=imageio.imread('P.jpg')
+plt.figure(figsize=(6,6))
+plt.imshow(pic);
+plt.axis('off');
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179957464-c616d4af-5b74-4f01-b9d8-8c3970ecbe15.png)
+
+**Negetive**
+negetive=255-pic
+plt.figure(figsize=(6,6))
+plt.imshow(negetive);
+plt.axis('off');
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179957708-aa3c6639-095b-44c2-b60a-70c653ff2374.png)
+
+**Log transformation**
+
+%matplotlib inline
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+pic=imageio.imread('P.jpg')
+gray=lambda rgb: np.dot(rgb[...,:3], [0.299,0.587,0.114])
+gray=gray(pic)
+max_=np.max(gray)
+
+def log_transform(): 
+    return(255/np.log(1+max_))*np.log(1+gray)
+plt.figure(figsize=(5,5))
+plt.imshow(log_transform(),cmap=plt.get_cmap (name='gray'))
+plt.axis('off');
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179957963-f358e020-5a38-4411-9fdd-42d31906a863.png)
+
+**Gamma correction**
+
+import imageio
+import matplotlib.pyplot as plt
+pic=imageio.imread('P.jpg')
+gamma=2.2
+gamma_correction=((pic/255)**(1/gamma))
+plt.figure(figsize=(5,5))
+plt.imshow(gamma_correction)
+plt.axis('off');
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179958233-64f0a3d3-5f75-4f18-9c5e-0d8146579e5c.png)
+
+**24.Program to perform basic image manipulation
+a)Sharpness
+b)Flipping
+c)Cropping**
+
+**a)Sharping**
+
+from PIL import Image
+from PIL import ImageFilter
+import matplotlib.pyplot as plt
+
+my_image = Image.open('tea.jpg')
+sharp= my_image.filter(ImageFilter.SHARPEN)
+
+sharp.save('D:/image_sharpen.jpg')
+sharp.show()
+plt.imshow(sharp)
+plt.show() 
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179958657-198fac64-5799-42c5-b8e2-6d8610ea7623.png)
+
+**Flipping**
+import matplotlib.pyplot as plt 
+img=Image.open('tea.jpg')
+plt.imshow(img)
+plt.show()
+
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+
+flip.save('D:/image_flip.jpg')
+plt.imshow(flip)
+plt.show()
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179958999-34ad29d2-2b22-4f28-81b3-b77c4ba06c18.png)
+
+**Cropping**
+
+from PIL import Image
+import matplotlib.pyplot as plt 
+im=Image.open('tea.jpg')
+width, height = im.size
+im1=im.crop((280, 100,800,600))
+
+im1.show()
+plt.imshow(im1)
+plt.show()
+
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/179959213-85f6e842-67b8-4f51-96c1-29ad5e5d8b4c.png)
+
+
+
+
