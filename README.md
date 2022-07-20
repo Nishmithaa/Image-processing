@@ -483,120 +483,119 @@ plt.show()<br>
 *Output*<br>
 ![image](https://user-images.githubusercontent.com/98141713/178957424-12b6f35a-4b44-4a2d-a865-704af1bb4452.png)<br>
 
-**23. Program to perform basic image data analysisi using intensity transformation
+**23. Program to perform basic image data analysisi using intensity transformation<br>
 
-a)Image negetive
-b)log transformation
-c)Gamma correction**
+a)Image negetive<br>
+b)log transformation<br>
+c)Gamma correction**<br>
 
-%matplotlib inline
-import imageio
-import matplotlib.pyplot as plt
-import warnings
-import matplotlib.cbook
-warnings.filterwarnings("ignore", category=matplotlib.cbook.mplDeprecation)
-pic=imageio.imread('P.jpg')
-plt.figure(figsize=(6,6))
-plt.imshow(pic);
-plt.axis('off');
+%matplotlib inline<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+import warnings<br>
+import matplotlib.cbook<br>
+warnings.filterwarnings("ignore", category=matplotlib.cbook.mplDeprecation)<br>
+pic=imageio.imread('P.jpg')<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(pic);<br>
+plt.axis('off');<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179957464-c616d4af-5b74-4f01-b9d8-8c3970ecbe15.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179957464-c616d4af-5b74-4f01-b9d8-8c3970ecbe15.png)<br>
 
-**Negetive**
-negetive=255-pic
-plt.figure(figsize=(6,6))
-plt.imshow(negetive);
-plt.axis('off');
+**Negetive**<br>
+negetive=255-pic<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(negetive);<br>
+plt.axis('off');<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179957708-aa3c6639-095b-44c2-b60a-70c653ff2374.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179957708-aa3c6639-095b-44c2-b60a-70c653ff2374.png)<br>
 
-**Log transformation**
+**Log transformation**<br>
 
-%matplotlib inline
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
-pic=imageio.imread('P.jpg')
-gray=lambda rgb: np.dot(rgb[...,:3], [0.299,0.587,0.114])
-gray=gray(pic)
-max_=np.max(gray)
+%matplotlib inline<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+pic=imageio.imread('P.jpg')<br>
+gray=lambda rgb: np.dot(rgb[...,:3], [0.299,0.587,0.114])<br>
+gray=gray(pic)<br>
+max_=np.max(gray)<br>
 
-def log_transform(): 
-    return(255/np.log(1+max_))*np.log(1+gray)
-plt.figure(figsize=(5,5))
-plt.imshow(log_transform(),cmap=plt.get_cmap (name='gray'))
-plt.axis('off');
+def log_transform(): return(255/np.log(1+max_))*np.log(1+gray)<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(log_transform(),cmap=plt.get_cmap (name='gray'))<br>
+plt.axis('off');<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179957963-f358e020-5a38-4411-9fdd-42d31906a863.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179957963-f358e020-5a38-4411-9fdd-42d31906a863.png)<br>
 
-**Gamma correction**
+**Gamma correction**<br>
 
-import imageio
-import matplotlib.pyplot as plt
-pic=imageio.imread('P.jpg')
-gamma=2.2
-gamma_correction=((pic/255)**(1/gamma))
-plt.figure(figsize=(5,5))
-plt.imshow(gamma_correction)
-plt.axis('off');
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+pic=imageio.imread('P.jpg')<br>
+gamma=2.2<br>
+gamma_correction=((pic/255)**(1/gamma))<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(gamma_correction)<br>
+plt.axis('off');<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179958233-64f0a3d3-5f75-4f18-9c5e-0d8146579e5c.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179958233-64f0a3d3-5f75-4f18-9c5e-0d8146579e5c.png)<br>
 
-**24.Program to perform basic image manipulation
-a)Sharpness
-b)Flipping
-c)Cropping**
+**24.Program to perform basic image manipulation<br>
+a)Sharpness<br>
+b)Flipping<br>
+c)Cropping**<br>
 
-**a)Sharping**
+**a)Sharping**<br>
 
-from PIL import Image
-from PIL import ImageFilter
-import matplotlib.pyplot as plt
+from PIL import Image<br>
+from PIL import ImageFilter<br>
+import matplotlib.pyplot as plt<br>
 
-my_image = Image.open('tea.jpg')
-sharp= my_image.filter(ImageFilter.SHARPEN)
+my_image = Image.open('tea.jpg')<br>
+sharp= my_image.filter(ImageFilter.SHARPEN)<br>
 
-sharp.save('D:/image_sharpen.jpg')
-sharp.show()
-plt.imshow(sharp)
-plt.show() 
+sharp.save('D:/image_sharpen.jpg')<br>
+sharp.show()<br>
+plt.imshow(sharp)<br>
+plt.show() <br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179958657-198fac64-5799-42c5-b8e2-6d8610ea7623.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179958657-198fac64-5799-42c5-b8e2-6d8610ea7623.png)<br>
 
-**Flipping**
-import matplotlib.pyplot as plt 
-img=Image.open('tea.jpg')
-plt.imshow(img)
-plt.show()
+**Flipping**<br>
+import matplotlib.pyplot as plt <br>
+img=Image.open('tea.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
 
-flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)<br>
 
-flip.save('D:/image_flip.jpg')
-plt.imshow(flip)
-plt.show()
+flip.save('D:/image_flip.jpg')<br>
+plt.imshow(flip)<br>
+plt.show()<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179958999-34ad29d2-2b22-4f28-81b3-b77c4ba06c18.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179958999-34ad29d2-2b22-4f28-81b3-b77c4ba06c18.png)<br>
 
-**Cropping**
+**Cropping**<br>
 
-from PIL import Image
-import matplotlib.pyplot as plt 
-im=Image.open('tea.jpg')
-width, height = im.size
-im1=im.crop((280, 100,800,600))
+from PIL import Image<br>
+import matplotlib.pyplot as plt<br> 
+im=Image.open('tea.jpg')<br>
+width, height = im.size<br>
+im1=im.crop((280, 100,800,600))<br>
 
-im1.show()
-plt.imshow(im1)
-plt.show()
+im1.show()<br>
+plt.imshow(im1)<br>
+plt.show()<br>
 
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/179959213-85f6e842-67b8-4f51-96c1-29ad5e5d8b4c.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/179959213-85f6e842-67b8-4f51-96c1-29ad5e5d8b4c.png)<br>
 
 
 
