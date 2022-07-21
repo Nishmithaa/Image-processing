@@ -597,6 +597,35 @@ plt.show()<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/179959213-85f6e842-67b8-4f51-96c1-29ad5e5d8b4c.png)<br>
 
+**Generate a matrix and display the image data**<br>
+import matplotlib.image as image<br>
+img=image.imread('sunrise.jpg')<br>
+print('The Shape of the image is:',img.shape)<br>
+print('The image as array is:')<br>
+print(img)<br>
 
+**Circle gradient**<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
 
+arr = np.zeros((256,256,3), dtype=np.uint8)<br>
+imgsize = arr.shape[:2]<br>
+innerColor = (255, 255, 255)<br>
+outerColor = (0,0,0)<br>
+for y in range(imgsize[1]):<br>
+    for x in range(imgsize[0]):<br>
+      
+        distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)<br>
 
+       
+        distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)<br>
+
+     
+        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)<br>
+        g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)<br>
+        b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)<br>
+       
+        arr[y, x] = (int(r), int(g), int(b))<br>
+
+plt.imshow(arr, cmap='gray')<br>
+plt.show()<br>
