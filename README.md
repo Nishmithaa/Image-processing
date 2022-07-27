@@ -632,4 +632,16 @@ plt.show()<br>
 
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/180190852-4ef79f81-a6fb-40f2-9c1d-f115b535917a.png)<br>
+<br>
+
+**Generate a matrix to display an image**<br>
+import matplotlib.image as image<br>
+img=image.imread('sunrise.jpg')<br>
+print('The Shape of the image is:',img.shape)<br>
+print('The image as array is:')<br>
+print(img)<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/181209579-8c9da716-427a-4e33-9971-4a5f20a875e9.png)<br>
+
 
