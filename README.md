@@ -644,4 +644,87 @@ print(img)<br>
 **Output**<br>
 ![image](https://user-images.githubusercontent.com/98141713/181209579-8c9da716-427a-4e33-9971-4a5f20a875e9.png)<br>
 
+**Assignment**<br>
+from numpy import asarray<br>
+from PIL import Image<br>
+
+image = Image.open('ppp.jpg')<br>
+pixels = asarray(image)<br>
+
+#print('Data Type: %s' % pixels.dtype)<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+
+pixels = pixels.astype('float32')<br>
+# normalize to the range 0-1<br>
+pixels /= 255.0<br>
+
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/181234703-9223a19c-d242-4169-9eab-bdab5ce83ec8.png)<br>
+
+
+hello...Maximize
+
+# example of pixel normalization
+from numpy import asarray
+from PIL import Image
+# load image
+image = Image.open('21.jpg')
+pixels = asarray(image)
+# confirm pixel range is 0-255
+#print('Data Type: %s' % pixels.dtype)
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+# convert from integers to floats
+pixels = pixels.astype('float32')
+# normalize to the range 0-1
+pixels /= 255.0
+# confirm the normalization
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+
+
+Average
+
+import cv2
+import matplotlib.pyplot as plt
+img=cv2.imread("21.jpg",0)
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+plt.imshow(img)
+np.average(img)
+
+
+SD
+
+from PIL import Image,ImageStat
+import matplotlib.pyplot as plt
+im=Image.open('22.jpg')
+plt.imshow(im)
+plt.show()
+stat=ImageStat.Stat(im)
+print(stat.stddev)
+
+Max
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+img=cv2.imread('21.jpg' )
+plt.imshow(img)
+plt.show()
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
+
+print(max_channels)
+
+
+Min
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+img=cv2.imread('21.jpg' )
+plt.imshow(img)
+plt.show()
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
+
+print(min_channels)
+
+
+
 
