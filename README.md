@@ -663,67 +663,73 @@ print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
 ![image](https://user-images.githubusercontent.com/98141713/181234703-9223a19c-d242-4169-9eab-bdab5ce83ec8.png)<br>
 
 
-hello...Maximize
 
-# example of pixel normalization
-from numpy import asarray
-from PIL import Image
-# load image
-image = Image.open('21.jpg')
+
+**pixel normalization**<br>
+from numpy import as array<br>
+from PIL import Image<br>
+# load image<br>
+image = Image.open('21.jpg')<br>
 pixels = asarray(image)
-# confirm pixel range is 0-255
-#print('Data Type: %s' % pixels.dtype)
-print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
-# convert from integers to floats
-pixels = pixels.astype('float32')
-# normalize to the range 0-1
-pixels /= 255.0
-# confirm the normalization
-print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+# confirm pixel range is 0-255<br>
+#print('Data Type: %s' % pixels.dtype)<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+# convert from integers to floats<br>
+pixels = pixels.astype('float32')<br>
+# normalize to the range 0-1<br>
+pixels /= 255.0<br>
+# confirm the normalization<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
 
 
-Average
+**Average**<br>
 
-import cv2
-import matplotlib.pyplot as plt
-img=cv2.imread("21.jpg",0)
-img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-plt.imshow(img)
-np.average(img)
-
-
-SD
-
-from PIL import Image,ImageStat
-import matplotlib.pyplot as plt
-im=Image.open('22.jpg')
-plt.imshow(im)
-plt.show()
-stat=ImageStat.Stat(im)
-print(stat.stddev)
-
-Max
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-img=cv2.imread('21.jpg' )
-plt.imshow(img)
-plt.show()
-max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
-
-print(max_channels)
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread("21.jpg",0)<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
+plt.imshow(img)<br>
+np.average(img)<br>
 
 
-Min
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-img=cv2.imread('21.jpg' )
-plt.imshow(img)
-plt.show()
-min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
+**SD**<br>
 
-print(min_channels)
+from PIL import Image,ImageStat<br>
+import matplotlib.pyplot as plt<br>
+im=Image.open('22.jpg')<br>
+plt.imshow(im)<br>
+plt.show()<br>
+stat=ImageStat.Stat(im)<br>
+print(stat.stddev)<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/181434576-a3a26de1-626d-43f9-9c46-185b37e18ecd.png)
+
+**Max**<br>
+import cv2<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('21.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
+print(max_channels)<br>
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/181434730-bcf51d85-2911-45f5-9103-07d241600782.png)
+
+
+
+**Min**<br>
+import cv2<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('21.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
+print(min_channels)<br>
+**Output**
+![image](https://user-images.githubusercontent.com/98141713/181434843-5a4a932a-3027-445e-a48a-cf86e36cf3ca.png)
 
 
 
