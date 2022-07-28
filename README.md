@@ -692,7 +692,7 @@ stat=ImageStat.Stat(im)<br>
 print(stat.stddev)<br>
 
 **Output**<br>
-![image](https://user-images.githubusercontent.com/98141713/181434576-a3a26de1-626d-43f9-9c46-185b37e18ecd.png)
+![image](https://user-images.githubusercontent.com/98141713/181434576-a3a26de1-626d-43f9-9c46-185b37e18ecd.png)<br>
 
 **Max**<br>
 import cv2<br>
@@ -703,8 +703,8 @@ plt.imshow(img)<br>
 plt.show()<br>
 max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
 print(max_channels)<br>
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/181434730-bcf51d85-2911-45f5-9103-07d241600782.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/181434730-bcf51d85-2911-45f5-9103-07d241600782.png)><br>
 
 
 
@@ -717,8 +717,8 @@ plt.imshow(img)<br>
 plt.show()<br>
 min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
 print(min_channels)<br>
-**Output**
-![image](https://user-images.githubusercontent.com/98141713/181434843-5a4a932a-3027-445e-a48a-cf86e36cf3ca.png)
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/181434843-5a4a932a-3027-445e-a48a-cf86e36cf3ca.png)<br>
 
 
 
