@@ -614,18 +614,12 @@ innerColor = (255, 255, 255)<br>
 outerColor = (0,0,0)<br>
 for y in range(imgsize[1]):<br>
     for x in range(imgsize[0]):<br>
-      
-        distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)<br>
-
-       
-        distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)<br>
-
-     
-        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)<br>
+      distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)<br>
+      distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)<br>
+      r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)<br>
         g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)<br>
         b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)<br>
-       
-        arr[y, x] = (int(r), int(g), int(b))<br>
+       arr[y, x] = (int(r), int(g), int(b))<br>
 
 plt.imshow(arr, cmap='gray')<br>
 plt.show()<br>
@@ -668,17 +662,12 @@ print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
 **pixel normalization**<br>
 from numpy import as array<br>
 from PIL import Image<br>
-# load image<br>
 image = Image.open('21.jpg')<br>
 pixels = asarray(image)
-# confirm pixel range is 0-255<br>
 #print('Data Type: %s' % pixels.dtype)<br>
 print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
-# convert from integers to floats<br>
 pixels = pixels.astype('float32')<br>
-# normalize to the range 0-1<br>
 pixels /= 255.0<br>
-# confirm the normalization<br>
 print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
 
 
