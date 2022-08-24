@@ -721,5 +721,43 @@ print(min_channels)<br>
 ![image](https://user-images.githubusercontent.com/98141713/181434843-5a4a932a-3027-445e-a48a-cf86e36cf3ca.png)<br>
 
 
+**Edge detection using opencv**<br>
+import cv2<br>
+img = cv2.imread('man.jpg')<br>
+cv2.imshow('Original', img)<br>
+cv2.waitKey(0)<br>
+
+img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)<br>
+img_blur = cv2.GaussianBlur(img_gray, (3,3), 0)<br>
+
+sobelx = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=1, dy=0, ksize=5)<br> 
+sobely = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=0, dy=1, ksize=5)<br> 
+sobelxy = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5)<br> 
+cv2.imshow('Sobel X', sobelx)<br>
+cv2.waitKey(0)<br>
+cv2.imshow('Sobel Y', sobely)<br>
+cv2.waitKey(0)<br>
+cv2.imshow('Sobel X Y using Sobel() function', sobelxy)<br>
+cv2.waitKey(0)<br>
+
+ edges = cv2.Canny(image=img_blur, threshold1=100, threshold2=200)<br> 
+cv2.imshow('Canny Edge Detection', edges)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+
+**Output**<br>
+**Original**<br>
+![image](https://user-images.githubusercontent.com/98141713/186401229-a873103a-b124-47b7-9607-44ecbeb4c7fd.png)<br>
+**Sobel X**<br>
+![image](https://user-images.githubusercontent.com/98141713/186401423-102f2d2c-39ea-42d4-9cd8-65220b582bcd.png)<br>
+**Sobel Y**<br>
+![image](https://user-images.githubusercontent.com/98141713/186401589-ccc73cb6-5aab-4418-bda4-5ec18859cf3b.png)<br>
+**Sobel X and Y using sobel fnctn**<br>
+![image](https://user-images.githubusercontent.com/98141713/186401731-a2450bbf-35c6-4ef3-80c1-af8b2d54f63e.png)<br>
+**Canny edge detection**<br>
+![image](https://user-images.githubusercontent.com/98141713/186401851-3411cb99-66b8-48d1-8663-5a9c3d185632.png)<br>
+
+
+
 
 
