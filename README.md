@@ -758,6 +758,90 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/98141713/186401851-3411cb99-66b8-48d1-8663-5a9c3d185632.png)<br>
 
 
+**Basic pillow functions**<br>
+from PIL import Image, ImageChops, ImageFilter <br>
+from matplotlib import pyplot as plt<br>
+
+
+x = Image.open("x.png")<br>
+o=Image.open("o.png")<br>
+
+
+print('size of the image:', x.size, 'colour mode:', x.mode)<br>
+print('size of the image: ', o.size, 'colour mode:', o.mode)<br>
+
+plt.subplot(121),plt.imshow(x)<br>
+plt.axis('off') <br>
+plt.subplot(122), plt.imshow(o)<br>
+plt.axis('off')<br>
+
+merged=ImageChops.multiply(x,o)<br>
+add=ImageChops.add(x,o)<br>
+      
+greyscale=merged.convert('L')<br>
+greyscale<br>
+
+**Output**<br>
+size of the image: (256, 256) colour mode: RGB<br>
+size of the image:  (256, 256) colour mode: RGB<br>
+![image](https://user-images.githubusercontent.com/98141713/186650405-ff63bbcd-c9ab-4369-9681-aab8c1a79ab8.png)<br>
+
+
+**2**<br>
+image=merged<br>
+print('image size:',image.size,<br>
+      '\ncolor mode:', image.mode, <br>
+      '\nimage width:', image.width,'| also represented by:',image.size[0],<br>
+      '\nimage height:', image.height, '| also represented by:',image.size[1],)<br>
+ **Output**<br>
+ image size: (256, 256) <br>
+color mode: RGB <br>
+image width: 256 | also represented by: 256 <br>
+image height: 256 | also represented by: 256<br>
+
+**3**<br>
+pixel = greyscale.load()<br>
+for row in range (greyscale.size[0]):<br>
+ for column in range(greyscale.size[1]):<br>
+    if pixel[row, column] != (255):<br>
+      pixel[row, column] = (0)<br>
+    
+greyscale<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/186650649-5f089a26-0809-435e-88eb-3095f4ec4dcf.png)<br>
+
+**4**<br>
+invert = ImageChops.invert(greyscale)<br>
+
+bg=Image.new('L', (256, 256), color=(255)) <br>
+subt=ImageChops. subtract (bg, greyscale)<br> 
+rotate =subt.rotate(45)<br>
+rotate<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/186650805-d5e2bba4-ab10-4b3e-a506-3a150146ee65.png)<br>
+
+**5**<br>
+blur=greyscale.filter(ImageFilter.GaussianBlur (radius=1))<br>
+edge=blur.filter(ImageFilter.FIND_EDGES)<br>
+edge<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/186650948-ac389f46-42bd-44eb-ada9-cd082ed323fa.png)<br>
+
+**6**<br>
+edge=edge.convert('RGB')<br>
+
+bg_red=Image.new('RGB', (256,256), color=(255,0,0))<br>
+filled_edge = ImageChops.darker(bg_red, edge)<br>
+filled_edge<br>
+
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141713/186651084-e017711c-dfa4-4a4b-bd6b-0a2c9fd80fd8.png)<br>
+
+
+
+
 
 
 
